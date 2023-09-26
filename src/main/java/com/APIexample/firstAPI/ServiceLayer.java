@@ -1,6 +1,7 @@
 package com.APIexample.firstAPI;
 
 import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,7 +9,8 @@ import java.util.List;
 
 @Service
 public class ServiceLayer {
-    RepositoryLayer respositoryLayerObj = new RepositoryLayer();
+    @Autowired
+            private RepositoryLayer respositoryLayerObj;
 
     public String addUser(UserInfo userinfo) {
         String result = respositoryLayerObj.addUserToDb(userinfo);
